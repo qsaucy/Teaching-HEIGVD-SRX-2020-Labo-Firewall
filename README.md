@@ -299,6 +299,8 @@ ping 8.8.8.8
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
 
+![Echec du ping](figures/failPingInternet.png)
+
 ---
 
 ### Configuration réseau du firewall
