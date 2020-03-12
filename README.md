@@ -124,14 +124,17 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 **LIVRABLE : Remplir le tableau**
 
 | Adresse IP source | Adresse IP destination | Type | Port src | Port dst | Action |
-| :---:             | :---:                  | :---:| :------: | :------: | :----: |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
+| :---------------: | :--------------------: | :--: | :------: | :------: | :----: |
+| 192.168.100.0/24  |     interface wan      | UDP  |   any    |    53    | accept |
+| 192.168.100.0/24  |     interface wan      | TCP  |   any    |    53    | accept |
+| 192.168.100.0/24  |    192.168.200.0/24    | ICMP |   any    |   any    | accept |
+| 192.168.100.0/24  |     interface wan      | TCP  |   any    |   8080   | accept |
+| 192.168.100.0/24  |     interface wan      | TCP  |   any    |    80    | accept |
+| 192.168.200.0/24  |     192.168.200.3      | TCP  |   any    |   443    | accept |
+|        any        |     192.168.200.3      | tcp  |   any    |    80    | accept |
+|   192.168.100.3   |    192.168.200.0/24    | tcp  |   any    |    22    | accept |
+|   192.168.100.3   |     192.168.100.2      | tcp  |   any    |    22    | accept |
+|        any        |          any           | any  |   any    |   any    |  drop  |
 
 ---
 
